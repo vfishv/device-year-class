@@ -24,6 +24,9 @@ public class YearClass {
   public static final int CLASS_2014 = 2014;
   public static final int CLASS_2015 = 2015;
   public static final int CLASS_2016 = 2016;
+  public static final int CLASS_2017 = 2017;
+  public static final int CLASS_2018 = 2018;
+
 
   private static final long MB = 1024 * 1024;
   private static final int MHZ_IN_KHZ = 1000;
@@ -82,7 +85,16 @@ public class YearClass {
     if (totalRam <= 3 * 1024 * MB) {
       return CLASS_2014;
     }
-    return totalRam <= 5 * 1024 * MB ? CLASS_2015 : CLASS_2016;
+    if (totalRam <= 5 * 1024 * MB) {
+      return CLASS_2015;
+    }
+    if (totalRam <= 6 * 1024 * MB) {
+      return CLASS_2016;
+    }
+    if (totalRam <= 8 * 1024 * MB) {
+      return CLASS_2017;
+    }
+    return CLASS_2018;
   }
 
   /**
